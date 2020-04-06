@@ -201,7 +201,7 @@ void *mymalloc(size_t size) // allocates space in the heap and manages
   return;
 }
 
-void *myfree(void *p) // the field is released and added to the freelist
+void *myfree(void *p) // releases field and adds to the freelist
 {
   Block *header_free = (Block *)(p - sizeof(Block));
   header_free->info.isfree = 1;
